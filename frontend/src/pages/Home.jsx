@@ -1,9 +1,21 @@
-import { useEffect } from "react"; 
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
+ 
 function Home() {
+   const navigate = useNavigate();
+
+  const handleAnalyze = () => {
+    navigate("/result");
+  };
+
+  useEffect(() => {
+    // your mouse effect code
+  }, []);
+  
   useEffect(() => {
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth) * 100;
@@ -47,7 +59,9 @@ function Home() {
           </p>
           <div className="repo-input">
             <input type="text" placeholder="Enter GitHub Repository URL" />
-            <button className="analyze-btn">Analyze Repository</button>
+            <button className="analyze-btn" onClick={handleAnalyze}>
+  Analyze Repository
+</button>
           </div>
         </div>
       </section>
