@@ -1,13 +1,29 @@
+
 import { useEffect, useState } from "react"; 
 import { useNavigate } from "react-router-dom"; 
+
+
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Home.css"; // Ensure this file exists in src/pages/
 
+ 
 function Home() {
+
   const [repoUrl, setRepoUrl] = useState("");
   const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
+
+
+   const navigate = useNavigate();
+
+  const handleAnalyze = () => {
+    navigate("/result");
+  };
+  
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -69,6 +85,7 @@ const handleAnalyze = async () => {
           <p>Analyze commit patterns, coding behavior, and burnout risks.</p>
           
           <div className="repo-input">
+
             <input 
               type="text" 
               placeholder="Enter GitHub Repository URL" 
@@ -82,6 +99,12 @@ const handleAnalyze = async () => {
             >
               {loading ? "DECODING DNA..." : "Analyze Repository"}
             </button>
+
+            <input type="text" placeholder="Enter GitHub Repository URL" />
+            <button className="analyze-btn" onClick={handleAnalyze}>
+  Analyze Repository
+</button>
+
           </div>
         </div>
       </section>

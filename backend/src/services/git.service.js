@@ -22,7 +22,7 @@ exports.cloneRepo = async (repoUrl) => {
   const git = simpleGit();
 
   try {
-    await git.clone(repoUrl, repoPath);
+    await git.clone(repoUrl, repoPath, ["--depth", "5000"]);
     return repoPath;
   } catch (error) {
     throw new Error("Failed to clone repository. It may be private or invalid.");
