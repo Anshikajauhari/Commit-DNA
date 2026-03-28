@@ -4,19 +4,6 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ResultPage from "./pages/Result";
 
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/dashboard" element={<Dashboard />} />
-//       </Routes>
-//     </Router> 
-//   );
-// }
-
-
-
 function App() {
   return (
     <BrowserRouter>
